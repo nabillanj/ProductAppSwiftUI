@@ -1,0 +1,23 @@
+//
+//  String+Extensions.swift
+//  ProductAppSwiftUI
+//
+//  Created by nabilla on 03/01/24.
+//
+
+import Foundation
+
+extension String {
+    var isNumeric: Bool {
+        Double(self) != nil
+    }
+    
+    func isLessThan(_ number: Double) -> Bool {
+        if !self.isNumeric{
+            return false
+        }
+        
+        guard let value = Double(self) else { return false }
+        return value < number
+    }
+}
